@@ -1,0 +1,9 @@
+body {
+  width: 200px;
+}
+
+#interval, 
+#upload-url  {
+  height: 1em;
+  width: 120px;
+}
