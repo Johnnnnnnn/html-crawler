@@ -3,7 +3,19 @@ body {
 }
 
 #interval, 
-#upload-url  {
+#target-site
+{
   height: 1em;
   width: 120px;
+}
+
+#upload-url {
+  height: 1em;
+  width: 80px;	
+}
+
+
+#upload-url-port {
+  height: 1em;
+  width: 30px;
 }

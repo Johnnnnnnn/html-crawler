@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "Getting started example",
-  "description": "This extension allows the user to change the background color of the current page.",
+  "name": "Html crawler",
+  "description": "This extension allows the user to crawler html",
   "version": "1.0",
 
   "background": {
@@ -20,13 +20,9 @@
   "permissions": [
     "http://localhost/*",
     "activeTab",
-    "storage"
-  ],
-
-  "content_scripts": [
-    {
-      "matches": [""],
-      "js": ["contentScript.js"]
-    }
+    "storage",
+    "http://*/",
+    "https://*/"
   ]
+
 }

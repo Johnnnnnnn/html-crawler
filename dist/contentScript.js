@@ -4,6 +4,7 @@ if(document.readyState !== 'complete') {
     afterWindowLoaded();
 }
 
+console.log('add content!');
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     console.log(sender.tab ?

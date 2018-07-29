@@ -1,20 +1,23 @@
 document.addEventListener('DOMContentLoaded', function(dcle) {
-    const startBtn = document.getElementById("button");
+    const startBtn = document.getElementById("start");
 
-    let task;
-    //點擊按鈕，向內容腳本發送訊息
-    startBtn.addEventListener('click', function(e) {
-        console.log('start');
-        getHTML();
-        task = setInterval( getHTML, 3000)
+    startBtn.addEventListener('click', function() {
+        const url = document.getElementById("upload-url").value || '/';
+        const port = document.getElementById("upload-url-port").value || '80';
+        const target = document.getElementById("target-site").value || '';
+        const interval = document.getElementById("interval").value || '5';
+
+        chrome.runtime.sendMessage(
+            {
+                message: 'start_crawl',
+                server: `http://localhost:${port}${url}`,
+                target: target,
+                interval: interval
+            },
+            function (response) {
+                console.log(response.message);
+            }
+        );
     });
 
 });
-
-function getHTML(){
-    chrome.tabs.getSelected(null, function(tab){
-       chrome.tabs.sendMessage(tab.id, {greeting: "hello"}, function(response) {
-            console.log(response.farewell);
-         });
-    });
-}
