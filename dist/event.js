@@ -34,6 +34,7 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 
             // add callback when recieve message from tabs
             taskArray.push( (tabsMsg, tabsSender) => {
+                console.log(tabsMsg.options.message);
                 $.ajax({
                     type: 'POST',
                     data: { 
